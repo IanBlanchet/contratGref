@@ -1,0 +1,40 @@
+{
+  "definitions": {
+    "Contrat": {
+      "properties": {
+        "description": {}, 
+        "id": {}, 
+        "no": {}, 
+        "service": {}
+      }, 
+      "type": "object"
+    }
+  }, 
+  "info": {
+    "title": "Gestion contrat l\u00e9gauxt", 
+    "version": "v1"
+  }, 
+  "paths": {
+    "/api/v1/contrat": {
+      "get": {
+        "parameters": [], 
+        "responses": {
+          "default": {
+            "description": "", 
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/Contrat"
+              }, 
+              "type": "array"
+            }
+          }
+        }
+      }, 
+      "post": {
+        "parameters": [], 
+        "responses": {}
+      }
+    }
+  }, 
+  "swagger": "2.0.0"
+}
