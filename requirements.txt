@@ -25,7 +25,6 @@ Mako==1.1.6
 MarkupSafe==2.0.1
 marshmallow==3.14.1
 packaging==21.3
-pkg_resources==0.0.0
 psycopg2-binary==2.9.3
 pyparsing==3.0.7
 PySocks==1.7.1
