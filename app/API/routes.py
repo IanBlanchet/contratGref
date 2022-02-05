@@ -41,7 +41,7 @@ api.add_resource(ContratApi, '/api/v1/contrat')
 
 app.config.update({
     'APISPEC_SPEC': APISpec(
-        title='Gestion contrat légauxt',
+        title='Gestion contrat légaux',
         version='v1',
         plugins=[MarshmallowPlugin()],
         openapi_version='2.0.0'

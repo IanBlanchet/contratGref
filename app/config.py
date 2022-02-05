@@ -12,7 +12,7 @@ load_dotenv()
 class Config(object):
 	SECRET_KEY = os.environ.get('SECRET_KEY') or 'tu le devinera pas'
 	token = os.environ.get('token')
-	DATABASE_URI = os.environ.get('DATABASE_URI') or 'sqlite:///pos.db'
+	DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///pos.db'
 	FLASK_APP = os.environ.get('FLASK_APP')
 
 #connection with bd
