@@ -35,8 +35,18 @@ class ContratApi(MethodResource,Resource):
         
         return
 
+class EventApi(MethodResource, Resource):
+    @marshal_with(event_schema)
+    def get(self):
+        "Get related events"
+        if request.args.get('contrat_id'):
+            relatedEvents = session.query(Event).filter_by(contrat_id=request.args.get('contrat_id')).all()
+            return event_schema.dump(relatedEvents)
+        events = session.query(Event).all()
+        return event_schema.dump(events)
 
 api.add_resource(ContratApi, '/api/v1/contrat')
+api.add_resource(EventApi, '/api/v1/event')
 
 
 app.config.update({
@@ -44,7 +54,7 @@ app.config.update({
         title='Gestion contrat légaux',
         version='v1',
         plugins=[MarshmallowPlugin()],
-        openapi_version='2.0.0'
+        openapi_version='2.0'
     ),
     'APISPEC_SWAGGER_URL': '/swagger/',  # URI to access API Doc JSON 
     'APISPEC_SWAGGER_UI_URL': '/swagger-ui/'  # URI to access UI of API Doc
@@ -52,3 +62,4 @@ app.config.update({
 docs = FlaskApiSpec(app)
 
 docs.register(ContratApi)
+docs.register(EventApi)
